@@ -18,6 +18,7 @@ alias rmdir='rm -rf -i'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+HISTTIMEFORMAT='%F %T '
 setopt share_history
 setopt hist_reduce_blanks
 setopt auto_param_slash
