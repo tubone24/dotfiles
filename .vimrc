@@ -103,5 +103,3 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
         augroup END
         call ZenkakuSpace()
     endif
-
-
