@@ -42,7 +42,17 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/usr/local/texlive/2017basic/bin/x86_64-darwin:$PATH
 export TF_LOG=1                                    # Terraform Debug log
 export TF_LOG_PATH='./terraform.log'"
-eval "$(/usr/local/Cellar/pyenv/1.2.6/bin/pyenv init -)"             # Pyenv
+eval "$(/usr/local/Cellar/pyenv/1.2.18/bin/pyenv init -)"             # Pyenv
+
+# Zplug
+ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
+zplug "zsh-users/zsh-completions" # 多くのコマンドに対応する入力補完 … https://github.com/zsh-users/zsh-completions
+zplug "zsh-users/zsh-syntax-highlighting", defer:2 # fishシェル風のシンタクスハイライト … https://github.com/zsh-users/zsh-syntax-highlighting
+zplug "supercrabtree/k" # git情報を含んだファイルリストを表示するコマンド … https://github.com/supercrabtree/k
+zplug "b4b4r07/enhancd", use:init.sh # cdコマンドをインタラクティブにするプラグイン … https://github.com/b4b4r07/enhancd
+zplug "mrowa44/emojify", as:command # emoji表示
+zplug "b4b4r07/emoji-cli" # emoji入力
 
 # ------------------------------
 # Look And Feel Settings
@@ -264,7 +274,7 @@ function _func_dfimage() {
 }
 # peco
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
