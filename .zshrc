@@ -37,13 +37,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小�
 alias apache='sudo apachectl'
 export PATH=/opt/local/bin:/opt/local/sbin/:/Users/tubone/.local/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="/usr/local/texlive/2017basic/bin/x86_64-darwin:$PATH
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 export TF_LOG=1                                    # Terraform Debug log
-export TF_LOG_PATH='./terraform.log'"
-eval "$(/usr/local/Cellar/pyenv/1.2.18/bin/pyenv init -)"             # Pyenv
-
+export TF_LOG_PATH='./terraform.log'
+# eval "$(/usr/local/Cellar/pyenv/1.2.18/bin/pyenv init -)"
 # Zplug
 ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -129,19 +127,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 # ------------------------------
 # Other Settings
 # ------------------------------
-### RVM ###
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
-### Macports ###
-case "${OSTYPE}" in
-  darwin*)
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-    export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
-  ;;
-esac
-
-### Aliases ###
-alias r=rails
 alias v=vim
 # cdコマンド実行後、lsを実行する
 function cd() {
@@ -223,15 +209,6 @@ function tmux_automatically_attach_session()
     fi
 }
 tmux_automatically_attach_session
-# Ruby
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-    eval "$(rbenv init -)"
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# AutoCreate Dockerimage to Dockerfile
 # https://github.com/RyodoTanaka/.bash_extend/blob/master/dfimage.bash
 
 function _func_dfimage() {
@@ -317,3 +294,5 @@ function peco-ghq-look () {
 
 zle -N peco-ghq-look
 bindkey '^G' peco-ghq-look
+# load bash_profile because of ansible
+source ~/.bash_profile
