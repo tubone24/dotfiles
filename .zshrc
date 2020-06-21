@@ -7,6 +7,7 @@ alias rm='rm -i'
 alias ll='ls -lhr'
 alias branchname='echo "develop-"`date +"%Y%m%d%H%M%S"`'  # featureブランチをぱっぱと作る   git checkout -b `branchname`
 alias dfimage=_func_dfimage
+alias timeconvert='~/.userscript/timeconvert.sh'
 hash -d web=/Library/webServer/Documents
 setopt auto_pushd
 setopt hist_ignore_space
