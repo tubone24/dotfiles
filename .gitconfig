@@ -1,5 +1,7 @@
 [user]
 	name = tubone
 	email = tubo.yyyuuu@gmail.com
+[pull]
+	ff = only
 [core]
 	autocrlf = input
