@@ -17,6 +17,7 @@ setopt pushd_ignore_dups
 setopt extended_glob
 alias sha1='echo -n "${1}" | openssl sha1 | sed "s/^.* //"'
 alias rmdir='rm -rf -i'
+alias tmux='tmux -u'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -36,6 +37,8 @@ setopt list_types              # 補完候補にファイルの種類も表示�
 bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
 alias apache='sudo apachectl'
+export LANG=ja_JP.UTF-8 #日本語に設定しないと<8021><8082>みたいになる
+export LESSCHARSET=utf-8
 export PATH=/opt/local/bin:/opt/local/sbin/:/Users/tubone/.local/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 # export PYENV_ROOT="$HOME/.pyenv"
