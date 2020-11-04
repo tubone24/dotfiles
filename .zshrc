@@ -43,7 +43,7 @@ export PATH=/opt/local/bin:/opt/local/sbin/:/Users/tubone/.local/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
-export TF_LOG=1                                    # Terraform Debug log
+export TF_LOG=DEBUG                         # Terraform Debug log
 export TF_LOG_PATH='./terraform.log'
 # eval "$(/usr/local/Cellar/pyenv/1.2.18/bin/pyenv init -)"
 # Zplug
