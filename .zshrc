@@ -143,9 +143,7 @@ function dict() {
     grep $1 ~/Library/bash_dict/gene-utf8.txt -A 1 -wi --color
 }
 
-if [[ -s ~/.nvm/nvm.sh ]];
- then source ~/.nvm/nvm.sh
-fi
+
 export PATH="$HOME/.embulk/bin:$PATH"
 export PATH="/anaconda/bin:$PATH"
 
