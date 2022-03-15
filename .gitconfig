@@ -5,6 +5,8 @@
 	ff = only
 [core]
 	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	hooksPath = ~/.config/git/hooks
 [alias]
 	merged-delete = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main|master|qa|production|release'|xargs git branch -d; };f"
 [ghq]

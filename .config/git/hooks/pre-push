@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# if the branch is protected branch, then fail.
+
+branch="$(git symbolic-ref HEAD 2>/dev/null)" || \
+       "$(git describe --contains --all HEAD)"
+
+    case "${branch##refs/heads/}" in
+        "master" ) 
+            echo "!!!Not allowed master git-push!!!"
+            exit 1;;
+        "main" )
+            echo "!!!Not allowed main git-push!!!"
+            exit 1 ;;
+        "qa" )
+            echo "!!!Not allowed qa git-push!!!"
+            exit 1 ;;
+        "production" ) 
+            echo "!!!Not allowed production git-push!!!"
+            exit 1 ;;
+    esac
+
+source "$(dirname "$0")/_local-hook-exec"
