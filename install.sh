@@ -2,9 +2,11 @@
 
 cp -r .userscript ~/
 cp -r .vim ~/
+cp -r .config ~/
 cp .agignore ~/
 cp .ansible.cfg ~/
 cp .gitconfig ~/
+cp .gitignore_global ~/
 cp .tmux.conf ~/
 cp .vimrc ~/
 cp .zprofile ~/
