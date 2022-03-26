@@ -13,5 +13,6 @@ cp .zprofile ~/
 cp .zshrc ~/
 mkdir ~/.cache
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+ls -la
 source ~/.zplug/init.zsh
 source ~/.zshrc
