@@ -12,6 +12,7 @@ cp .vimrc ~/
 cp .zprofile ~/
 cp .zshrc ~/
 mkdir ~/.cache
-git clone https://github.com/zplug/zplug.git ~/.zplug
+export ZPLUG_HOME=~/.zplug
+git clone https://github.com/zplug/zplug.git $ZPLUG_HOME
 source ~/.zplug/init.zsh
 source ~/.zshrc
