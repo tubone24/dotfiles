@@ -12,7 +12,6 @@ cp .vimrc ~/
 cp .zprofile ~/
 cp .zshrc ~/
 mkdir ~/.cache
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-ls -la
+git clone https://github.com/zplug/zplug.git ~/.zplug
 source ~/.zplug/init.zsh
 source ~/.zshrc
