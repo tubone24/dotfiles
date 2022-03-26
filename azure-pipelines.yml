@@ -13,5 +13,5 @@ jobs:
   steps:
   - script: |
       ls -la
-      sh ./install.sh
+      zsh ./install.sh
     displayName: 'Install'
