@@ -4,5 +4,5 @@
 ## Install
 
 ```
-sh install.sh
+zsh install.sh
 ```
