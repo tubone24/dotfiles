@@ -13,6 +13,6 @@ cp .zprofile ~/
 cp .zshrc ~/
 mkdir ~/.cache
 export ZPLUG_HOME=~/.zplug
-git clone https://github.com/zplug/zplug.git $ZPLUG_HOME
+brew install zplug
 source ~/.zplug/init.zsh
 source ~/.zshrc
