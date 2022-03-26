@@ -12,6 +12,9 @@ jobs:
     vmImage: $(imageName)
   steps:
   - script: |
+      brew install tmux
+    displayName: 'Before Install'
+  - script: |
       ls -la
       zsh ./install.sh
     displayName: 'Install'
