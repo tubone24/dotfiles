@@ -12,5 +12,6 @@ jobs:
     vmImage: $(imageName)
   steps:
   - script: |
+      ls -la
       sh ./install.sh
     displayName: 'Install'
