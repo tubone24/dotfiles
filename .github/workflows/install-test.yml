@@ -22,4 +22,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install
-        run: sh install.sh
+        run: zsh install.sh
