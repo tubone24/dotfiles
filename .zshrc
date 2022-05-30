@@ -102,16 +102,28 @@ if is-at-least 4.3.10; then
       zstyle ':vcs_info:git:*' formats '[%b]'
       zstyle ':vcs_info:git:*' actionformats '[%b|%a]'
 fi
+
+function tf_prompt_info() {
+    # dont show 'default' workspace in home dir
+    [[ "$PWD" == ~ ]] && return
+    # check if in terraform dir
+    if [ -d .terraform ]; then
+      workspace=$(terraform workspace show 2> /dev/null) || return
+      echo "(tf)[${workspace}]"
+    fi
+}
+
 function _update_vcs_info_msg() {
       psvar=()
       LANG=en_US.UTF-8 vcs_info
       [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-      }
-      add-zsh-hook precmd _update_vcs_info_msg
+ }
+ 
+ add-zsh-hook precmd _update_vcs_info_msg
 
 PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
-RPROMPT=$tmp_rprompt"%1(v|%F{green}%1v%f|)"  # 右側のプロンプト
+RPROMPT=$tmp_rprompt"%1(v|%F{yellow}%1v%f|)%2(v|%F{cyan}%2v%f|)"  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 # SSHログイン時のプロンプト
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
