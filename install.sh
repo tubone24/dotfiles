@@ -11,6 +11,7 @@ cp .tmux.conf ~/
 cp .vimrc ~/
 cp .zprofile ~/
 cp .zshrc ~/
+cp .huskyrc ~/
 mkdir ~/.cache
 export ZPLUG_HOME=~/.zplug
 git clone https://github.com/zplug/zplug.git $ZPLUG_HOME
