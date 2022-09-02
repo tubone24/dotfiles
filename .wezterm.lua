@@ -94,7 +94,7 @@ wezterm.on("update-right-status", function(window, pane)
     end
   
     -- 時刻表示
-    local date = wezterm.strftime("%m/%-d %H:%M:%S %a");
+    local date = wezterm.strftime("%m/%d %H:%M:%S %a");
     table.insert(cells, wezterm.nerdfonts.mdi_clock .. '  ' .. date);
   
     -- バッテリー
