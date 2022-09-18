@@ -7,7 +7,18 @@
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 	hooksPath = ~/.config/git/hooks
-[alias]
-	merged-delete = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main|master|qa|production|release'|xargs git branch -d; };f"
 [ghq]
         root = ~/project
+[fetch]
+  prune = true
+[commit]
+  verbose = true
+  template = ~/.stCommitMsg
+[alias]
+	merged-delete = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main|master|qa|production|release'|xargs git branch -d; };f"
+	branch-activity = for-each-ref --format='%(authordate) %(refname)' --sort=-committerdate refs/heads refs/remotes
+	refresh = fetch --prune
+	root-dir = rev-parse --show-toplevel
+	push-f = push --force-with-lease
+	uncommit = reset --mixed HEAD~
+	
