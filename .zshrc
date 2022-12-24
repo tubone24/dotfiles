@@ -4,6 +4,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias glog='git log --graph --oneline --decorate --all'   # branchをまたがってgit networkを出す
 alias rm='rm -i'
+alias ls='lsd'
 alias ll='ls -lhr'
 alias branchname='echo "develop-"`date +"%Y%m%d%H%M%S"`'  # featureブランチをぱっぱと作る   git checkout -b `branchname`
 alias dfimage=_func_dfimage
