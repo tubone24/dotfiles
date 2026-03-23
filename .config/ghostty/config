@@ -1,0 +1,47 @@
+# ===========================================
+# cmux (Ghostty) Configuration
+# マルチエージェント並列開発に最適化 + モダン外観
+# ===========================================
+
+# --- テーマ（ライト/ダークモード自動切替） ---
+theme = Catppuccin Mocha
+
+# --- 背景透過 + フロストガラス効果 ---
+background-opacity = 0.88
+background-blur = 20
+
+# --- フォント設定 ---
+font-family = "JetBrains Mono"
+font-size = 14
+font-thicken = true
+font-feature = +calt
+font-feature = +liga
+
+# --- カーソル ---
+cursor-style = bar
+cursor-style-blink = true
+
+# --- ウィンドウ ---
+macos-titlebar-style = tabs
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+window-colorspace = display-p3
+
+# --- スプリットペイン ---
+unfocused-split-opacity = 0.75
+split-divider-color = #585b70
+
+# --- cmux サイドバー ---
+sidebar-background = #1e1e2e
+sidebar-tint-opacity = 0.95
+
+# --- スクロールバック ---
+scrollback-limit = 50000
+
+# --- 作業ディレクトリ ---
+working-directory = home
+
+# --- キーバインド ---
+# Shift+Enter で改行入力（Claude Code対応）
+keybind = shift+enter=text:\n
